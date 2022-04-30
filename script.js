@@ -9,29 +9,40 @@ bubbleSortByAge(persons);
 printArray(persons);
 
 function bubbleSort(arr){
-    let temp;
-    for (let i = 0; i < arr.length-1; i++) {
-        for(let j = i+1; j < arr.length; j++){
-            if(arr[i] >  arr[j]){
+    let temp, checker;
+    
+    do{ 
+        checker = false
+        for (let i = 0; i < arr.length-1; i++) {
+            if (arr[i] > arr[i+1]){
                 temp = arr[i]
-                arr[i] = arr[j]
-                arr[j] = temp
-            } 
-        }     
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+                checker = true
+            }
+        }
+
     }
+   while(checker)
+
 }
 
+
 function bubbleSortByAge(persons){
-    let temp;
-    for (let i = 0; i < persons.length-1; i++){
-        for(let j = i+1; j < persons.length; j++){
-            if(persons[i].age > persons[j].age){
+    let temp,checker;
+    do{
+        checker = false;
+        for (let i = 0; i < persons.length-1; i++){
+            if(persons[i].age > persons[i+1].age){
                 temp = persons[i]
-                persons[i] = persons[j]
-                persons[j] = temp
-            }           
+                persons[i] = persons[i+1]
+                persons[i+1] = temp
+                checker = true
+            }
         }
-    }
+}
+while(checker)
+
 }
 
 
